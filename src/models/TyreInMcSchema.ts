@@ -1,5 +1,7 @@
-import * as mongoose from "mongoose";
-import { Schema, Document, Model } from "mongoose";
+import type { Document, Model, Schema as SchemaType } from 'mongoose';
+import mongoose from 'mongoose';
+
+const Schema = mongoose.Schema
 
 export interface ITyreMc extends Document {
   billDate: string;
@@ -14,7 +16,7 @@ export interface ITyreMc extends Document {
   withoutGstPay: string;
 }
 
-const TyreMcSchema: Schema<ITyreMc> = new Schema(
+const TyreMcSchema: SchemaType<ITyreMc> = new Schema(
   {
     billDate: { type: String, required: true, trim: true },
     fitmentDate: { type: String, default: "STOCK", trim: true },
