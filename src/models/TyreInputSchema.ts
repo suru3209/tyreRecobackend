@@ -1,4 +1,5 @@
-import mongoose, { Schema, Document, Model } from "mongoose";
+import * as mongoose from "mongoose";
+import { Schema, Document, Model } from "mongoose";
 
 // Step 1: Interface for Type Safety
 export interface ITyre extends Document {
