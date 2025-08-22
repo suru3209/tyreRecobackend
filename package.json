@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
-    "start": "ts-node build/index.js"
+    "start": "ts-node dist/index.js"
   },
   "keywords": [],
   "author": "",
