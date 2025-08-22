@@ -1,27 +1,5 @@
-// import mongoose from "mongoose";
-
-// // Schema
-// const tyresSchema = new mongoose.Schema({
-//   billDate: String,
-//   fitmentDate: {
-//     type: String,
-//     default: "STOCK",
-//   },
-//   truckNo: String,
-//   newTyreModel: String,
-//   newTyreNo: String,
-//   billingFirm: String,
-//   dealerName: String,
-//   billNo: String,
-//   payment: String,
-//   withoutGstPay: String,
-// });
-
-// export const TyreMcModel = mongoose.model("TyreMcModel", tyresSchema);
-
 import mongoose, { Schema, Document, Model } from "mongoose";
 
-// Interface define karo
 export interface ITyreMc extends Document {
   billDate: string;
   fitmentDate?: string;
@@ -35,24 +13,22 @@ export interface ITyreMc extends Document {
   withoutGstPay: string;
 }
 
-// Schema
 const TyreMcSchema: Schema<ITyreMc> = new Schema(
   {
-    billDate: { type: String, required: true },
-    fitmentDate: { type: String, default: "STOCK" },
-    truckNo: { type: String, required: true },
-    newTyreModel: { type: String, required: true },
-    newTyreNo: { type: String, required: true },
-    billingFirm: { type: String, required: true },
-    dealerName: { type: String, required: true },
-    billNo: { type: String, required: true },
-    payment: { type: String, required: true },
-    withoutGstPay: { type: String, required: true },
+    billDate: { type: String, required: true, trim: true },
+    fitmentDate: { type: String, default: "STOCK", trim: true },
+    truckNo: { type: String, required: true, trim: true },
+    newTyreModel: { type: String, required: true, trim: true },
+    newTyreNo: { type: String, required: true, trim: true, unique: true },
+    billingFirm: { type: String, required: true, trim: true },
+    dealerName: { type: String, required: true, trim: true },
+    billNo: { type: String, required: true, trim: true },
+    payment: { type: String, required: true, trim: true },
+    withoutGstPay: { type: String, required: true, trim: true },
   },
-  { timestamps: true } // automatic createdAt & updatedAt
+  { timestamps: true }
 );
 
-// Model
 export const TyreMcModel: Model<ITyreMc> = mongoose.model<ITyreMc>(
   "TyreMcModel",
   TyreMcSchema
