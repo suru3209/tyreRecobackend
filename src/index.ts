@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 // Update the import path if necessary, or create the file if missing
-import { TyreModel } from "./src/models/TyreInputSchema";
-import { TyreMcModel } from "./src/models/TyreInMcSchema";
+import { TyreModel } from "./models/TyreInputSchema";
+import { TyreMcModel } from "./models/TyreInMcSchema";
 // import { tyreDemoData } from "./src/data/tyreDemoData";
 
 dotenv.config();
