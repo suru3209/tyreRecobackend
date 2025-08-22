@@ -21,7 +21,7 @@ const TyreMcSchema: Schema<ITyreMc> = new Schema(
     truckNo: { type: String, required: true, trim: true },
     newTyreModel: { type: String, required: true, trim: true },
     newTyreNo: { type: String, required: true, trim: true, unique: true },
-    billingFirm: { type: String, required: true, trim: true },
+    billingFirm: { type: String, trim: true },
     dealerName: { type: String, required: true, trim: true },
     billNo: { type: String, required: true, trim: true },
     payment: { type: String, required: true, trim: true },
