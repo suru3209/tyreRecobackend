@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import authRoutes from "./routes/auth";
 // Update the import path if necessary, or create the file if missing
 import { TyreModel } from "./models/TyreInputSchema";
 import { TyreMcModel } from "./models/TyreInMcSchema";
@@ -9,14 +10,14 @@ import { TyreMcModel } from "./models/TyreInMcSchema";
 
 dotenv.config();
 const app = express();
-
-// const allowedOrigins = [
-//   // development (vite ke liye)
-//   "https://tyre-reco.vercel.app/", // Vercel ka actual domain
-// ];
+app.use("/api/auth", authRoutes);
 
 app.use(
-  cors()
+  cors({
+    origin: ["http://localhost:5173"], // <- yaha apna Vercel domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
 );
 app.use(express.json());
 
@@ -150,5 +151,5 @@ app.delete("/mctyres/:id", async (req, res) => {
   res.json({ message: "Deleted Successfully" });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
