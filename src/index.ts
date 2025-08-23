@@ -12,7 +12,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:8080", // development (vite ke liye)
-  "https://tyre-reco-bzcagzqpg-surya-singhs-projects-73399793.vercel.app", // Vercel ka actual domain
+  "https://tyre-reco.vercel.app/", // Vercel ka actual domain
 ];
 
 app.use(
