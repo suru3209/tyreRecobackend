@@ -10,17 +10,13 @@ import { TyreMcModel } from "./models/TyreInMcSchema";
 dotenv.config();
 const app = express();
 
-const allowedOrigins = [
-  // development (vite ke liye)
-  "https://tyre-reco.vercel.app/", // Vercel ka actual domain
-];
+// const allowedOrigins = [
+//   // development (vite ke liye)
+//   "https://tyre-reco.vercel.app/", // Vercel ka actual domain
+// ];
 
 app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // agar cookies ya tokens bhejna ho
-  })
+  cors()
 );
 app.use(express.json());
 
