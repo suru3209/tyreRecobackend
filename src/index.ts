@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:8080", // development (vite ke liye)
+  // development (vite ke liye)
   "https://tyre-reco.vercel.app/", // Vercel ka actual domain
 ];
 
