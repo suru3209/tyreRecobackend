@@ -10,16 +10,10 @@ import { TyreMcModel } from "./models/TyreInMcSchema";
 
 dotenv.config();
 const app = express();
-app.use("/api/auth", authRoutes);
 
-app.use(
-  cors({
-    origin: ["http://localhost:5173"], // <- yaha apna Vercel domain
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
+app.use("/api/auth", authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI || "")
