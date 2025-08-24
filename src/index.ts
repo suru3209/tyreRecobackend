@@ -14,7 +14,7 @@ app.use("/api/auth", authRoutes);
 
 app.use(
   cors({
-    origin: ["https://tyre-reco.vercel.app"], // frontend URL
+    origin: ["https://tyre-reco.vercel.app", "http://localhost:5173"], // frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // if using cookies / authentication
   })
