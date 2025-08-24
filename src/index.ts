@@ -10,10 +10,17 @@ import { TyreMcModel } from "./models/TyreInMcSchema";
 
 dotenv.config();
 const app = express();
-
-app.use(cors());
-app.use(express.json());
 app.use("/api/auth", authRoutes);
+
+app.use(
+  cors({
+    origin: ["http://localhost:5173/", "https://tyre-reco.vercel.app"], // frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // if using cookies / authentication
+  })
+);
+app.use(express.json());
+mongoose.set("strictQuery", true);
 
 mongoose
   .connect(process.env.MONGO_URI || "")
