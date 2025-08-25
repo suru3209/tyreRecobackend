@@ -19,8 +19,8 @@ app.use(
   })
 );
 
-app.use("/api/auth", authRoutes);
 app.use(express.json());
+app.use("/api/auth", authRoutes);
 mongoose.set("strictQuery", true);
 
 mongoose
