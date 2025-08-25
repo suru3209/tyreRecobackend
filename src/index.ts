@@ -6,7 +6,7 @@ import authRoutes from "./routes/auth";
 // Update the import path if necessary, or create the file if missing
 import { TyreModel } from "./models/TyreInputSchema";
 import { TyreMcModel } from "./models/TyreInMcSchema";
-// import { tyreDemoData } from "./src/data/tyreDemoData";
+// import { tyreDemoData } from "./data/tyreDemoData";
 
 dotenv.config();
 const app = express();
