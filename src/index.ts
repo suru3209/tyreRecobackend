@@ -10,7 +10,6 @@ import { TyreMcModel } from "./models/TyreInMcSchema";
 
 dotenv.config();
 const app = express();
-app.use("/api/auth", authRoutes);
 
 app.use(
   cors({
@@ -19,6 +18,8 @@ app.use(
     credentials: true, // if you use cookies or authorization headers
   })
 );
+
+app.use("/api/auth", authRoutes);
 app.use(express.json());
 mongoose.set("strictQuery", true);
 
